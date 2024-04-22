@@ -11,7 +11,7 @@
     <div id="unity-container" style="width:100%;height:100%">
       <canvas id="unity-canvas" style="width:auto; height:auto"></canvas>
       <div id="unity-loading-bar">
-        <div id=""></div>
+        <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
@@ -57,11 +57,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/VWeb_GitHub.loader.js";
+      var loaderUrl = buildUrl + "/VersaoWeb.loader.js";
       var config = {
-        dataUrl: buildUrl + "/VWeb_GitHub.data",
-        frameworkUrl: buildUrl + "/VWeb_GitHub.framework.js",
-        codeUrl: buildUrl + "/VWeb_GitHub.wasm",
+        dataUrl: buildUrl + "/VersaoWeb.data",
+        frameworkUrl: buildUrl + "/VersaoWeb.framework.js",
+        codeUrl: buildUrl + "/VersaoWeb.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "GamesWeb33",
         productName: "MetaRouletteMobile",
