@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Roulette Casino</title>
+    <title>Unity WebGL Player | MetaRoulette</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/socket.io.js"></script>
+    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk-unity.js"></script>
   </head>
   <body>
     <div id="unity-container" style="width:100%;height:100%">
@@ -24,7 +26,6 @@
       </div>
     </div>
     <script>
-
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
@@ -57,15 +58,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/VersaoWeb_Github.loader.js";
+      var loaderUrl = buildUrl + "/WebGL_Vista.loader.js";
       var config = {
-        dataUrl: buildUrl + "/VersaoWeb_Github.data",
-        frameworkUrl: buildUrl + "/VersaoWeb_Github.framework.js",
-        codeUrl: buildUrl + "/VersaoWeb_Github.wasm",
+        dataUrl: buildUrl + "/WebGL_Vista.data",
+        frameworkUrl: buildUrl + "/WebGL_Vista.framework.js",
+        codeUrl: buildUrl + "/WebGL_Vista.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "GamesWeb33",
-        productName: "MetaRouletteMobile",
-        productVersion: "1.0.0",
+        productName: "MetaRoulette",
+        productVersion: "1.0",
         showBanner: unityShowBanner,
       };
 
@@ -90,7 +91,7 @@
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
@@ -105,18 +106,17 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+          window.unityInstance = unityInstance;
+        }).catch((message) => {
+          alert(message);
+        });
+      };
       document.body.appendChild(script);
-
     </script>
   </body>
 </html>
