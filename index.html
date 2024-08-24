@@ -99,6 +99,11 @@
         canvas.style.height = "100%";
       }
 
+      var myWidth = innerWidth;
+      var myHeight = innerHeight;
+      document.getElementById("unityContainer").style.width=myWidth+"px";
+      document.getElementById("unityContainer").style.height=myHeight+"px";
+
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
