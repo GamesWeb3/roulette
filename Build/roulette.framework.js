@@ -43536,6 +43536,9 @@ var dynCall_jiiiii = Module["dynCall_jiiiii"] = createExportWrapper("dynCall_jii
 var dynCall_ddiii = Module["dynCall_ddiii"] = createExportWrapper("dynCall_ddiii");
 
 /** @type {function(...*):?} */
+var dynCall_viiiffiiii = Module["dynCall_viiiffiiii"] = createExportWrapper("dynCall_viiiffiiii");
+
+/** @type {function(...*):?} */
 var dynCall_vifiiffiiiii = Module["dynCall_vifiiffiiiii"] = createExportWrapper("dynCall_vifiiffiiiii");
 
 /** @type {function(...*):?} */
